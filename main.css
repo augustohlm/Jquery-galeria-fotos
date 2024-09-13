@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    /*Deixando os itens flexiveis para que possam ficar um ao lado do*/
+    display: flex;
+    /*Criando uma cor para a borda inferior*/
+    border-bottom: 16px solid #341f97;
+    /*Alinhando o conteúdo ao centro da tela*/
+    justify-content: center;
+    /*Deixando o texto em maiusculo*/
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/*Criando um espaçamento, onde tudo que está a esquerda do botão irá ser afastar por 16px*/
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6d5;
+    padding: 24px 0;
+    /*Alinhando os textos do formulário ao centro da tela*/
+    text-align: center;
+    /*Fazendo com que a exibição do formulário seja nula, pois trataremos da exibição via JQuery*/
+    display: none;
+}
+
+/*Criando um espaçamento inferior dos conteúdos abaixo do h2*/
+form h2 {
+    margin-bottom: 16px;
+}
+
+/*Criando espaçamento interno para os dois elementos */
+input, 
+button {
+    padding: 8px;
+
+}
+
+/*Criando uma cor de fundo
+tirando a borda
+colocando o cursor como pointer
+deixando a fonte em negrito
+deixando a fonte em maiusculo
+dando cor para a fonte
+*/
+button {
+    background-color: #009432;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*cor de fundo para o botão de cancelar*/
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    /*Fazendo os elementos dentro do UL ficarem um ao lado do outro*/
+    display: flex;
+
+    /*Fazendo com que quando as imagens chegarem ao limite da tela, cria-se uma nova linha*/
+    flex-wrap: wrap;
+}
+
+/*Definindo a largura máxima
+Retirando os marcadores do li (pontinho pretos que reforçam que se trata de uma lista)
+Deixando a posição deles de acordo com cada imagem
+Definindo o comprimento da imagem
+Como definimos o comprimento, agora com o overflow-y: iremos cortar na imagem o que sobrepor esse comprimento do eixo Y (eixo vertical)
+*/
+ul li {
+    max-width: 25%;
+    list-style: none;
+    position: relative;
+    height: 280px;
+    overflow-y: hidden;
+}
+
+/*Definindo que a imagem deve pegar uma propoção equivalente a 100% do espaço definido*/
+ul li img {
+    width: 100%;
+
+}
+
+/*
+position: absolute - definindo que a posição do link seja absoluta em questão a relativa ja definida.
+Zerando as margens inferiores e lateral esquerda para mais acertividade no local onde é preciso estar o link
+    bottom: 0px;
+    left: 0;
+
+Fazendo com que a posição cubra os 100% da imagem
+definindo a opacidade como 0, pois iremos mostrar o link somente quando passar o mouse em cima da imagem
+informando que quando houver a transição, irá ocorrer em 0.2 segundos
+
+*/
+.overlay-imagem-link {
+    padding: 16px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all ease .2s;
+}
+
+/*Definindo cor da fonte
+Tirando a cor azul do link*/
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+/*Definindo que quando houver uma interação do mouse com os elementros no ul li, ele puxe a opacidade como 1 e a transição definida.*/
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
